@@ -17,7 +17,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-border">
         <div className="container flex items-center justify-between h-16">
@@ -76,12 +76,11 @@ export default function Home() {
             </div>
             <div className="relative">
               <img
-                src="/hero-image.avif"
-                alt="Clínica QuiroSalud CDMX"
-                width={500}
-                height={500}
-                className="rounded-lg shadow-lg"
-                loading="lazy"
+                src="/hero-image.webp"
+                alt="Paciente recibiendo tratamiento quiropráctico profesional en Quiro Salud CDMX"
+                width={1920}
+                height={1080}
+                className="rounded-lg shadow-lg w-full"
               />
             </div>
           </div>
@@ -155,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24 bg-white">
+      <section id="testimonios" className="py-16 md:py-24 bg-white">
         <div className="container">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Testimonios de Nuestros Pacientes</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -253,9 +252,9 @@ export default function Home() {
       </section>
 
       {/* Blog CTA */}
-      <section className="py-12 md:py-16 bg-white border-t border-border">
+      <section id="blog" className="py-12 md:py-16 bg-white border-t border-border">
         <div className="container text-center">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">Mantente Informado</h3>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Mantente Informado</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Descubre artículos, consejos y noticias sobre cómo mantener una columna vertebral sana y vivir sin dolor.
           </p>
@@ -272,11 +271,11 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
-              <h4 className="font-semibold mb-4">QuiroSalud CDMX</h4>
+              <h3 className="font-semibold mb-4">QuiroSalud CDMX</h3>
               <p className="text-sm text-background/80">Clínica quiropráctica profesional en la Ciudad de México.</p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Enlaces Rápidos</h4>
+              <h3 className="font-semibold mb-4">Enlaces Rápidos</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <a href="#servicios" className="hover:underline">
@@ -296,7 +295,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Recursos</h4>
+              <h3 className="font-semibold mb-4">Recursos</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <a href={BUSINESS_BLOG_URL} target="_blank" rel="noopener noreferrer" className="hover:underline">
@@ -311,7 +310,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Contacto</h4>
+              <h3 className="font-semibold mb-4">Contacto</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <a href={`tel:${BUSINESS_PHONE}`} className="hover:underline">
@@ -331,6 +330,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   );
 }
