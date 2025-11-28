@@ -22,7 +22,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-border">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <img src="/logo.svg" alt={BUSINESS_NAME} width={40} height={40} className="h-10 w-10" />
+            <img src="/logo.webp" alt={BUSINESS_NAME} width={224} height={224} className="h-10 w-10" loading="eager" />
             <span className="font-bold text-lg hidden sm:inline">{BUSINESS_NAME}</span>
           </div>
           <div className="flex items-center gap-4">
@@ -54,12 +54,12 @@ export default function Home() {
                 Con más de 20 años de experiencia, ofrecemos tratamientos especializados para aliviar tu dolor de espalda, cuello, ciática y otros problemas de la columna vertebral. Nuestro enfoque personalizado garantiza resultados duraderos.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href={BUSINESS_FORM_URL} target="_blank" rel="noopener noreferrer">
+                <a href={BUSINESS_FORM_URL} target="_blank" rel="noopener noreferrer" aria-label="Agendar una valoración gratuita en QuiroSalud CDMX">
                   <Button size="lg" className="w-full sm:w-auto">
                     Agendar Valoración Gratuita <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </a>
-                <a href={`tel:${BUSINESS_PHONE}`}>
+                <a href={`tel:${BUSINESS_PHONE}`} aria-label={`Llamar a QuiroSalud CDMX al ${BUSINESS_PHONE_DISPLAY}`}>
                   <Button size="lg" variant="outline" className="w-full sm:w-auto">
                     <Phone className="mr-2 h-4 w-4" /> {BUSINESS_PHONE_DISPLAY}
                   </Button>
@@ -81,6 +81,8 @@ export default function Home() {
                 width={1920}
                 height={1080}
                 className="rounded-lg shadow-lg w-full"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -88,11 +90,14 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 md:py-24 bg-white">
+      <section id="por-que" className="py-16 md:py-24 bg-white">
         <div className="container">
-          <h2 id="por-que" className="text-3xl md:text-4xl font-bold mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
             ¿Por Qué Elegir QuiroSalud CDMX?
           </h2>
+          <p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto text-center leading-relaxed">
+            Somos tu clínica quiropráctica de confianza en Gustavo A. Madero, Ciudad de México, con más de 20 años de experiencia. Ofrecemos tratamientos integrales para aliviar dolor de espalda, cuello, ciática y problemas de columna vertebral con un enfoque personalizado que prioriza tu bienestar.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -141,7 +146,7 @@ export default function Home() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <a href={BUSINESS_FORM_URL} target="_blank" rel="noopener noreferrer">
+                  <a href={BUSINESS_FORM_URL} target="_blank" rel="noopener noreferrer" aria-label={`Agendar ${service.name} en QuiroSalud CDMX`}>
                     <Button variant="outline" className="w-full">
                       Agendar Este Servicio
                     </Button>
@@ -238,7 +243,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <a href={BUSINESS_FORM_URL} target="_blank" rel="noopener noreferrer">
+              <a href={BUSINESS_FORM_URL} target="_blank" rel="noopener noreferrer" aria-label="Agendar una cita en línea con QuiroSalud CDMX">
                 <Button size="lg" variant="secondary" className="w-full mb-4">
                   Agendar Cita en Línea
                 </Button>
@@ -258,7 +263,7 @@ export default function Home() {
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Descubre artículos, consejos y noticias sobre cómo mantener una columna vertebral sana y vivir sin dolor.
           </p>
-          <a href={BUSINESS_BLOG_URL} target="_blank" rel="noopener noreferrer">
+          <a href={BUSINESS_BLOG_URL} target="_blank" rel="noopener noreferrer" aria-label="Visitar el blog de QuiroSalud CDMX para artículos sobre salud quiropráctica">
             <Button size="lg">
               Visitar Nuestro Blog <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

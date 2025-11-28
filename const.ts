@@ -2,7 +2,7 @@ export { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 
 export const APP_TITLE = import.meta.env.VITE_APP_TITLE || "QuiroSalud CDMX - Clínica Quiropráctica Profesional";
 
-export const APP_LOGO = import.meta.env.VITE_APP_LOGO || "/logo.svg";
+export const APP_LOGO = import.meta.env.VITE_APP_LOGO || "/logo.webp";
 
 // Business information
 export const BUSINESS_NAME = "QuiroSalud CDMX";
