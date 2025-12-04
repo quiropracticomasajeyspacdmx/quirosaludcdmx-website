@@ -40,7 +40,8 @@
     <link rel="dns-prefetch" href="https://quiropracticocdmxpro.blogspot.com">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Structured Data JSON-LD for Local SEO -->
     <script type="application/ld+json">
@@ -262,7 +263,7 @@
         }
         
         .service-card h3 {
-            color: #FFD700;
+            color: #1a2a3a; /* Corregido para mejorar el contraste (Accesibilidad) */
             margin-bottom: 0.5rem;
         }
         
@@ -399,7 +400,7 @@
         <nav>
             <div class="container">
                 <div style="display: flex; align-items: center; gap: 1rem;">
-                    <img src="/logo.webp" alt="Quiropráctico Quiro Salud CDMX" width="50" height="50" loading="eager" style="height: 50px; width: auto;">
+                    <img src="/logo.webp" alt="Quiropráctico Quiro Salud CDMX" width="88" height="88" loading="eager" style="height: 50px; width: 50px;">
                     <span style="font-weight: 700; font-size: 1.1rem;">QuiroSalud CDMX</span>
                 </div>
                 <div style="display: flex; gap: 1.5rem;">
@@ -430,7 +431,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="/hero-image.webp" alt="Paciente recibiendo tratamiento quiropráctico profesional en Quiro Salud CDMX" width="1920" height="1080" loading="lazy" decoding="async">
+                        <img src="/hero-image.webp" alt="Paciente recibiendo tratamiento quiropráctico profesional en Quiro Salud CDMX" width="800" height="450" loading="lazy" decoding="async" style="aspect-ratio: 16/9; object-fit: cover; width: 100%; height: auto;">
                     </div>
                 </div>
             </div>
@@ -441,19 +442,19 @@
             <div class="container">
                 <h2>¿Por Qué Elegir QuiroSalud CDMX?</h2>
                 <p style="font-size: 1.1rem; max-width: 800px; margin-bottom: 2rem;">
-                    Somos tu clínica quiropráctica de confianza en Gustavo A. Madero, Ciudad de México, con más de 20 años de experiencia. Ofrecemos tratamientos integrales para aliviar dolor de espalda, cuello, ciática y problemas de columna vertebral con un enfoque personalizado que prioriza tu bienestar.
+                    Somos tu <a href="#servicios">clínica quiropráctica de confianza</a> en Gustavo A. Madero, Ciudad de México, con más de 20 años de experiencia. Ofrecemos <a href="#servicios">tratamientos integrales</a> para aliviar <a href="#servicios">dolor de espalda, cuello, ciática</a> y problemas de columna vertebral con un enfoque personalizado que prioriza tu bienestar. Si tienes dudas, consulta nuestra sección de <a href="#faq">Preguntas Frecuentes</a>.
                 </p>
                 <div class="services">
                     <div class="service-card">
-                        <h3>✓ +20 Años de Experiencia</h3>
+                        <h2>✓ +20 Años de Experiencia</h2>
                         <p>Décadas de práctica y conocimiento en tratamientos quiroprácticos especializados. Nuestro especialista ha ayudado a cientos de pacientes a recuperar su calidad de vida.</p>
                     </div>
                     <div class="service-card">
-                        <h3>✓ Atención Personalizada</h3>
+                        <h2>✓ Atención Personalizada</h2>
                         <p>Cada paciente recibe un plan de tratamiento único diseñado para sus necesidades específicas. No creemos en soluciones genéricas.</p>
                     </div>
                     <div class="service-card">
-                        <h3>✓ Ambiente Seguro y Acogedor</h3>
+                        <h2>✓ Ambiente Seguro y Acogedor</h2>
                         <p>Espacio profesional, limpio y confortable donde te sentirás seguro y confiado. Especialmente diseñado para que te relajes.</p>
                     </div>
                 </div>
@@ -469,25 +470,25 @@
                 </p>
                 <div class="services">
                     <div class="service-card">
-                        <h3>Terapia Integral Sin Dolor</h3>
+                        <h2>Terapia Integral Sin Dolor</h2>
                         <p class="price">$850 MXN</p>
                         <p>Consulta, valoración, masaje profundo, estiramientos, ajuste quiropráctico completo.</p>
                         <a href="https://form.jotform.com/quirosaludcdmx/formulario" target="_blank" rel="noopener noreferrer" class="btn" style="display: block; text-align: center; margin-top: 1rem;" aria-label="Agendar Terapia Integral Sin Dolor">Agendar Este Servicio</a>
                     </div>
                     <div class="service-card">
-                        <h3>Sesión Corta Quiropráctica</h3>
+                        <h2>Sesión Corta Quiropráctica</h2>
                         <p class="price">$650 MXN</p>
                         <p>Versión breve de la terapia integral, ideal para mantenimiento.</p>
                         <a href="https://form.jotform.com/quirosaludcdmx/formulario" target="_blank" rel="noopener noreferrer" class="btn" style="display: block; text-align: center; margin-top: 1rem;" aria-label="Agendar Sesión Corta Quiropráctica">Agendar Este Servicio</a>
                     </div>
                     <div class="service-card">
-                        <h3>Osteopatía</h3>
+                        <h2>Osteopatía</h2>
                         <p class="price">Desde $650 MXN</p>
                         <p>Método suave y efectivo. Primera consulta sin costo.</p>
                         <a href="https://form.jotform.com/quirosaludcdmx/formulario" target="_blank" rel="noopener noreferrer" class="btn" style="display: block; text-align: center; margin-top: 1rem;" aria-label="Agendar Osteopatía">Agendar Este Servicio</a>
                     </div>
                     <div class="service-card">
-                        <h3>Acupuntura Fisioterapéutica</h3>
+                        <h2>Acupuntura Fisioterapéutica</h2>
                         <p class="price">$300 MXN</p>
                         <p>Complemento terapéutico para alivio del dolor.</p>
                         <a href="https://form.jotform.com/quirosaludcdmx/formulario" target="_blank" rel="noopener noreferrer" class="btn" style="display: block; text-align: center; margin-top: 1rem;" aria-label="Agendar Acupuntura Fisioterapéutica">Agendar Este Servicio</a>
@@ -503,27 +504,27 @@
                 <div class="testimonials">
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
-                        <h3>Mariana Romero Roy</h3>
+                        <h4>Mariana Romero Roy</h4>
                         <p>"La ubicación no es la más bonita, pero el servicio es espectacular. Jorge es amable, profesional y su conocimiento es asombroso."</p>
                     </div>
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
-                        <h3>Lucia Bolaños</h3>
+                        <h4>Lucia Bolaños</h4>
                         <p>"Llegué con dolor en la columna y el masaje y la alineación me ayudaron muchísimo. Gracias por la atención."</p>
                     </div>
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
-                        <h3>Gisela</h3>
+                        <h4>Gisela</h4>
                         <p>"Fue mi primera vez y me llevé una excelente impresión. Muy amables, cuidadosos y explican a detalle."</p>
                     </div>
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
-                        <h3>Dante Rebolledo</h3>
+                        <h4>Dante Rebolledo</h4>
                         <p>"Excelente quiropráctico, lo recomiendo al 100%. Trato amable y profesional."</p>
                     </div>
                     <div class="testimonial-card">
                         <div class="stars">★★★★★</div>
-                        <h3>Sally Barraza</h3>
+                        <h4>Sally Barraza</h4>
                         <p>"Por más de 10 años visité quiroprácticos, pero nunca me habían ajustado con tanto cuidado. Altamente recomendado."</p>
                     </div>
                 </div>
