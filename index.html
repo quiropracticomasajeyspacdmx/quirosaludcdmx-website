@@ -33,6 +33,15 @@
     
     <title>Quiropráctico Quiro Salud CDMX | Alivio Real para tu Dolor</title>
     
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DNFH5CX564"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DNFH5CX564');
+    </script>
+    
     <!-- Preload Critical Resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -793,7 +802,7 @@
         });
     </script>
     <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/message/2KMF6H4SCTF3D1?text=Hola%2C%20vi%20sus%20servicios%20en%20Google%20me%20gustar%C3%ADa%20saber%20mas" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/message/2KMF6H4SCTF3D1?text=Hola%2C%20vi%20sus%20servicios%20en%20Google%20me%20gustar%C3%ADa%20saber%20mas" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" onclick="gtag('event', 'click', {'event_category': 'Contact', 'event_label': 'WhatsApp Button'});">
         <i class="fab fa-whatsapp"></i>
     </a>
 </body>
