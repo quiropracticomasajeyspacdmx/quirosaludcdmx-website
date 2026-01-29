@@ -405,129 +405,70 @@
                 grid-template-columns: 1fr;
             }
         }
-        .whatsapp-float {
+        /* Estilos del Botón de WhatsApp Rediseñado */
+    .whatsapp-float {
         position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 40px;
-        right: 40px;
+        bottom: 30px;
+        right: 30px;
         background-color: #25d366;
         color: #FFF;
         border-radius: 50px;
         text-align: center;
-        font-size: 30px;
-        box-shadow: 2px 2px 3px #999;
-        z-index: 100;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
+        padding: 12px 20px;
+        font-family: 'Poppins', sans-serif;
+        animation: pulse-whatsapp 2s infinite;
     }
 
     .whatsapp-float:hover {
         background-color: #1DA851;
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        color: #FFF;
     }
 
     .whatsapp-float i {
-        margin-top: 5px; /* Ajuste para centrar el icono */
+        font-size: 32px;
+        margin-right: 10px;
+    }
+
+    .whatsapp-float span {
+        font-size: 16px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    @keyframes pulse-whatsapp {
+        0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+        70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
     /* Icono de WhatsApp (Font Awesome) */
     @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
 
-    /* Media query para pantallas más pequeñas */
+    /* Optimización para móviles */
     @media (max-width: 768px) {
         .whatsapp-float {
-            width: 50px;
-            height: 50px;
             bottom: 20px;
             right: 20px;
-            font-size: 25px;
+            padding: 10px 15px;
+        }
+        .whatsapp-float i {
+            font-size: 28px;
+            margin-right: 8px;
+        }
+        .whatsapp-float span {
+            font-size: 14px;
         }
     }
-    .whatsapp-float {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 40px;
-        right: 40px;
-        background-color: #25d366;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 2px 2px 3px #999;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-    }
 
-    .whatsapp-float:hover {
-        background-color: #1DA851;
-    }
-
-    .whatsapp-float i {
-        margin-top: 5px; /* Ajuste para centrar el icono */
-    }
-
-    /* Icono de WhatsApp (Font Awesome) */
-    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-
-    /* Media query para pantallas más pequeñas */
-    @media (max-width: 768px) {
-        .whatsapp-float {
-            width: 50px;
-            height: 50px;
-            bottom: 20px;
-            right: 20px;
-            font-size: 25px;
-        }
-    }
-    .whatsapp-float {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 40px;
-        right: 40px;
-        background-color: #25d366;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 2px 2px 3px #999;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-    }
-
-    .whatsapp-float:hover {
-        background-color: #1DA851;
-    }
-
-    .whatsapp-float i {
-        margin-top: 5px; /* Ajuste para centrar el icono */
-    }
-
-    /* Icono de WhatsApp (Font Awesome) */
-    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-
-    /* Media query para pantallas más pequeñas */
-    @media (max-width: 768px) {
-        .whatsapp-float {
-            width: 50px;
-            height: 50px;
-            bottom: 20px;
-            right: 20px;
-            font-size: 25px;
-        }
-    }
 </style>
     <!-- Favicon generado a partir de la imagen del usuario -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -801,9 +742,10 @@
             console.log("Página cargada y optimizada");
         });
     </script>
-    <!-- Botón flotante de WhatsApp -->
+    <!-- Botón flotante de WhatsApp Rediseñado -->
     <a href="https://wa.me/message/2KMF6H4SCTF3D1?text=Hola%2C%20vi%20sus%20servicios%20en%20Google%20me%20gustar%C3%ADa%20saber%20mas" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" onclick="gtag('event', 'click', {'event_category': 'Contact', 'event_label': 'WhatsApp Button'});">
         <i class="fab fa-whatsapp"></i>
+        <span>¡Contáctanos!</span>
     </a>
 </body>
 </html>
