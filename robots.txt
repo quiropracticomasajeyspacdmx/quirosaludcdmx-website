@@ -1,4 +1,16 @@
+# robots.txt — quirosaludcdmx.site
+# Actualizado: Mayo 2026
+
 User-agent: *
 Allow: /
+Allow: /privacidad
+Allow: /cookies
+Allow: /aviso-legal
 
+# Bloquear assets que no aportan a indexación
+Disallow: /js/
+Disallow: /css/
+Disallow: /assets/
+
+# Sitemap
 Sitemap: https://quirosaludcdmx.site/sitemap.xml

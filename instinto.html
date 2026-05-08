@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cuestionario Instinto | Quiro Salud CDMX</title>
+  <meta name="description" content="Responde 5 preguntas y descubre qué tipo de atención quiropráctica se adapta mejor a ti. Personalizado, sin compromiso.">
+  <link rel="canonical" href="https://quirosaludcdmx.site/instinto">
+
+  <!-- OG / WhatsApp preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://quirosaludcdmx.site/instinto">
+  <meta property="og:title" content="¿Qué tipo de atención es la ideal para ti? — Quiro Salud CDMX">
+  <meta property="og:description" content="Responde 5 preguntas sobre qué esperas de tu tratamiento. Tu perfil quedará listo antes de tu primera visita.">
+  <meta property="og:image" content="og-instinto.webp">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="og-instinto.webp">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cuestionario Instinto — Quiro Salud CDMX",
+    "description": "Herramienta de personalización clínica previa. Permite al paciente expresar sus expectativas y umbral de tolerancia antes del tratamiento quiropráctico.",
+    "url": "https://quirosaludcdmx.site/instinto",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://quirosaludcdmx.site"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul:   #0B1E33;
+      --dorado: #D4AF37;
+      --verde:  #A2C523;
+      --steel:  #4A708B;
+      --blanco: #FFFFFF;
+      --fondo:  #0d2540;
+      --borde:  rgba(74,112,139,0.3);
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--azul);
+      color: var(--blanco);
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Card central ── */
+    #quiz-container {
+      background: var(--fondo);
+      width: 100%;
+      max-width: 480px;
+      padding: 36px 32px;
+      border-radius: 20px;
+      border: 1px solid var(--borde);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+      text-align: center;
+      position: relative;
+    }
+
+    /* ── Logo ── */
+    .logo-portada {
+      width: 90px;
+      height: auto;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    /* ── Barra de progreso ── */
+    .progress-container {
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      height: 5px;
+      border-radius: 10px;
+      margin-bottom: 28px;
+      display: none;
+      overflow: hidden;
+    }
+    #prog-bar {
+      height: 100%;
+      background: var(--verde);
+      border-radius: 10px;
+      transition: width 0.4s ease;
+      width: 0%;
+    }
+
+    /* ── Steps ── */
+    .step { display: none; animation: fadeIn 0.3s ease; }
+    .step.active { display: block; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ── Títulos ── */
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--dorado);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--blanco);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .intro-text {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    /* ── Botones de opción ── */
+    .option-btn {
+      display: block;
+      width: 100%;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--borde);
+      border-radius: 10px;
+      color: rgba(255,255,255,0.82);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      line-height: 1.5;
+    }
+    .option-btn:hover {
+      background: rgba(162,197,35,0.1);
+      border-color: var(--verde);
+      transform: translateX(4px);
+    }
+    .option-btn:active { transform: scale(0.98); }
+
+    /* ── Botón primario ── */
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--verde);
+      color: var(--azul);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      margin-top: 8px;
+    }
+    .btn-primary:hover { opacity: 0.88; }
+
+    /* ── Botón volver ── */
+    .btn-back {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.78rem;
+      cursor: pointer;
+      margin-top: 16px;
+      text-decoration: underline;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-back:hover { color: rgba(255,255,255,0.65); }
+
+    /* ── Resultado ── */
+    .result-badge {
+      display: inline-block;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 50px;
+      padding: 6px 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--dorado);
+      margin-bottom: 16px;
+    }
+    .result-text {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    /* ── Footer link ── */
+    .footer-link {
+      margin-top: 28px;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.25);
+    }
+    .footer-link a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+    .footer-link a:hover { color: var(--verde); }
+
+    @media (max-width: 400px) {
+      #quiz-container { padding: 28px 20px; }
+      h1 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="quiz-container">
+
+  <!-- Barra de progreso -->
+  <div class="progress-container" id="prog-cont">
+    <div id="prog-bar"></div>
+  </div>
+
+  <!-- PORTADA -->
+  <div class="step active" id="step-0">
+    <img src="logo-escudo.webp" alt="Quiro Salud CDMX" class="logo-portada">
+    <h1>Cuestionario Instinto</h1>
+    <p class="intro-text">
+      Antes de tu primera visita, queremos conocer qué esperas de tu tratamiento.<br><br>
+      5 preguntas. Sin respuestas correctas o incorrectas. Tu perfil quedará listo para cuando llegues — así personalizamos la sesión desde el primer momento.
+    </p>
+    <button class="btn-primary" onclick="nextStep(1)">Comenzar</button>
+    <div class="footer-link">
+      <a href="/">← Volver al sitio principal</a>
+    </div>
+  </div>
+
+  <!-- PREGUNTA 1 -->
+  <div class="step" id="step-1">
+    <h2>¿Cómo describirías tu relación con el dolor que traes hoy?</h2>
+    <button class="option-btn" onclick="selectOption('A',2)">
+      🔎 Quiero entender exactamente de dónde viene antes de recibir cualquier tratamiento.
+    </button>
+    <button class="option-btn" onclick="selectOption('B',2)">
+      ⚡ Necesito alivio pronto. El análisis puede venir después.
+    </button>
+    <button class="option-btn" onclick="selectOption('C',2)">
+      🔄 Ya he intentado varias cosas. Busco algo diferente que realmente funcione.
+    </button>
+  </div>
+
+  <!-- PREGUNTA 2 -->
+  <div class="step" id="step-2">
+    <h2>¿Qué tan cómodo te sientes con la idea de recibir un ajuste?</h2>
+    <button class="option-btn" onclick="selectOption('A',3)">
+      📖 Necesito que me expliquen cada paso antes de que suceda.
+    </button>
+    <button class="option-btn" onclick="selectOption('B',3)">
+      ✅ Confío en el especialista. Si es necesario, adelante.
+    </button>
+    <button class="option-btn" onclick="selectOption('C',3)">
+      💪 No me preocupa. Ya tuve ajustes antes o tengo mucha tolerancia.
+    </button>
+    <button class="btn-back" onclick="goToStep(1)">← Anterior</button>
+  </div>
+
+  <!-- PREGUNTA 3 -->
+  <div class="step" id="step-3">
+    <h2>¿Qué esperas llevarte de tu primera sesión?</h2>
+    <button class="option-btn" onclick="selectOption('A',4)">
+      🗺️ Un diagnóstico claro y un plan que tenga lógica.
+    </button>
+    <button class="option-btn" onclick="selectOption('B',4)">
+      😌 Sentirme mejor que cuando llegué, aunque sea un poco.
+    </button>
+    <button class="option-btn" onclick="selectOption('C',4)">
+      🎯 Un ajuste profundo que note desde esa misma noche.
+    </button>
+    <button class="btn-back" onclick="goToStep(2)">← Anterior</button>
+  </div>
+
+  <!-- PREGUNTA 4 -->
+  <div class="step" id="step-4">
+    <h2>¿Cómo prefieres que sea la comunicación durante el tratamiento?</h2>
+    <button class="option-btn" onclick="selectOption('A',5)">
+      💬 Que me expliquen qué está pasando mientras lo hacen.
+    </button>
+    <button class="option-btn" onclick="selectOption('B',5)">
+      🤫 Prefiero concentrarme. Menos palabras, más enfoque.
+    </button>
+    <button class="option-btn" onclick="selectOption('C',5)">
+      🙋 Depende del momento. Me adapto fácil.
+    </button>
+    <button class="btn-back" onclick="goToStep(3)">← Anterior</button>
+  </div>
+
+  <!-- PREGUNTA 5 -->
+  <div class="step" id="step-5">
+    <h2>¿Qué tan abierto estás a más de una sesión si el caso lo requiere?</h2>
+    <button class="option-btn" onclick="showResult('A')">
+      📋 Abierto, siempre que me expliquen el porqué de cada una.
+    </button>
+    <button class="option-btn" onclick="showResult('B')">
+      🔄 Razonable. Si veo resultados, continúo sin problema.
+    </button>
+    <button class="option-btn" onclick="showResult('C')">
+      🚀 Lo que sea necesario. Quiero recuperarme lo antes posible.
+    </button>
+    <button class="btn-back" onclick="goToStep(4)">← Anterior</button>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="step" id="result-step">
+    <img src="logo-escudo.webp" alt="Quiro Salud CDMX" class="logo-portada">
+    <div class="result-badge">Tu perfil clínico</div>
+    <p class="result-text" id="result-text"></p>
+    <p style="font-size:0.85rem; color:rgba(255,255,255,0.5); margin-bottom:20px;">
+      Este perfil acompaña tu expediente. Tu especialista lo revisará antes de que llegues.
+    </p>
+    <a id="btn-jotform-result"
+       href="https://form.jotform.com/quirosaludcdmx/formulario"
+       class="btn-primary"
+       target="_blank"
+       rel="noopener noreferrer">
+      Agendar mi Valoración →
+    </a>
+    <div class="footer-link" style="margin-top:20px;">
+      <a href="/">← Volver al sitio principal</a>
+    </div>
+  </div>
+
+</div><!-- /quiz-container -->
+
+<script>
+  let scores = { A:0, B:0, C:0 };
+  let path   = [];
+
+  function nextStep(step) {
+    const total = 5;
+    const prog  = document.getElementById('prog-cont');
+    const bar   = document.getElementById('prog-bar');
+
+    if (step >= 1 && step <= total) {
+      prog.style.display = 'block';
+      bar.style.width    = ((step - 1) / total * 100) + '%';
+    } else {
+      prog.style.display = 'none';
+    }
+
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step-' + step).classList.add('active');
+  }
+
+  function goToStep(step) {
+    const last = path.pop();
+    if (last) scores[last]--;
+    nextStep(step);
+  }
+
+  function selectOption(val, next) {
+    scores[val]++;
+    path.push(val);
+    nextStep(next);
+  }
+
+  function showResult(val) {
+    scores[val]++;
+    path.push(val);
+
+    document.getElementById('prog-bar').style.width = '100%';
+
+    const winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+
+    const perfiles = {
+      A: {
+        nombre: 'Sintonía de Respeto',
+        texto:  'Para ti, la lógica y la información son parte del tratamiento. Eso es exactamente lo que vamos a ofrecerte: cada paso explicado antes de darlo, a un ritmo que tenga sentido para ti. No te vamos a pedir que confíes a ciegas — te vamos a dar razones para hacerlo.'
+      },
+      B: {
+        nombre: 'Sintonía de Seguridad',
+        texto:  'Buscas efectividad sin sorpresas, y eso es completamente válido. Tu objetivo es salir mejor de lo que entraste, con un plan que tenga respaldo. Estás en buenas manos: aquí los resultados hablan antes que las promesas.'
+      },
+      C: {
+        nombre: 'Sintonía de Experiencia',
+        texto:  'Ya sabes lo que buscas y tienes claro el nivel de atención que esperas. Llegaremos a la profundidad que necesitas, con la precisión que merece un caso que ya conoce el proceso. Tu experiencia previa es información valiosa, no un obstáculo.'
+      }
+    };
+
+    const perfil = perfiles[winner];
+    document.getElementById('result-text').innerHTML =
+      `<strong style="color:#D4AF37; font-family:'Montserrat',sans-serif; font-size:1rem; text-transform:uppercase; display:block; margin-bottom:12px;">${perfil.nombre}</strong>${perfil.texto}`;
+
+    // Inyectar perfil en URL del JotForm para trazabilidad
+    const jotformURL = `https://form.jotform.com/quirosaludcdmx/formulario?input_57=instinto-${winner.toLowerCase()}`;
+    document.getElementById('btn-jotform-result').href = jotformURL;
+
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.getElementById('result-step').classList.add('active');
+  }
+</script>
+
+</body>
+</html>
