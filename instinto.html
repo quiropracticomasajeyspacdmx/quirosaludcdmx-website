@@ -409,7 +409,7 @@
       `<strong style="color:#D4AF37; font-family:'Montserrat',sans-serif; font-size:1rem; text-transform:uppercase; display:block; margin-bottom:12px;">${perfil.nombre}</strong>${perfil.texto}`;
 
     // Inyectar perfil en URL del JotForm para trazabilidad
-    const jotformURL = `https://form.jotform.com/quirosaludcdmx/formulario?input_57=instinto-${winner.toLowerCase()}`;
+    const jotformURL = `https://form.jotform.com/quirosaludcdmx/formulario?cuestionariohumano=instinto-${winner.toLowerCase()}`;
     document.getElementById('btn-jotform-result').href = jotformURL;
 
     document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
