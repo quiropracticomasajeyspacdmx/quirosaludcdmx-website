@@ -1,39 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Página principal — prioridad máxima -->
+  <!-- Página principal -->
   <url>
     <loc>https://quirosaludcdmx.site/</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Servicios -->
+  <url>
+    <loc>https://quirosaludcdmx.site/servicios</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Cuestionario Instinto -->
   <url>
     <loc>https://quirosaludcdmx.site/instinto</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Páginas legales — noindex en HTML, pero accesibles para rastreo -->
+  <!-- Páginas legales -->
   <url>
     <loc>https://quirosaludcdmx.site/privacidad</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
     <loc>https://quirosaludcdmx.site/cookies</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
 
   <url>
     <loc>https://quirosaludcdmx.site/aviso-legal</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
